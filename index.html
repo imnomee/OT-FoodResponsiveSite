@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='./style.css'>
+    <title>Green Foods</title>
+</head>
+
+<body>
+    <div class='container'>
+        <header class='header'>
+            <a class='logo' href='#'>Good<span>Foods</span></a>
+            <ul>
+                <li><a href='#' class='active'>Home</a></li>
+                <li><a href='#'>Menu</a></li>
+                <li><a href='#'>About</a></li>
+                <li><a href='#'>Contact</a></li>
+
+            </ul>
+        </header>
+        <div class="content">
+            <div class="bannerText" id='slideshowText'>
+                <div class="active">
+                    <h2>Eat Healty<br>Stay Healthy </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nulla cupiditate odit eos,
+                        dolor, excepturi iste harum animi quis, illum omnis adipisci id voluptatem. Magni ratione
+                        nobis
+                        deserunt nulla fuga.</p>
+                    <a href='#'>Read More</a>
+                </div>
+                <div>
+                    <h2>Eat Your<br>Veggies</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nulla cupiditate odit eos,
+                        dolor, excepturi iste harum animi quis, illum omnis adipisci id voluptatem. Magni ratione
+                        nobis
+                        deserunt nulla fuga.</p>
+                    <a href='#'>Read More</a>
+                </div>
+                <div>
+                    <h2>Good Food<br>Good Mood </h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti nulla cupiditate odit eos,
+                        dolor, excepturi iste harum animi quis, illum omnis adipisci id voluptatem. Magni ratione
+                        nobis
+                        deserunt nulla fuga.</p>
+                    <a href='#'>Read More</a>
+                </div>
+            </div>
+            <div class="bannerImg" id='slideshow'>
+                <img src="./assets/image1.jpg" alt="" class='active'>
+                <img src="./assets/image2.jpg" alt="">
+                <img src="./assets/image3.jpg" alt="">
+            </div>
+
+        </div>
+        <div class="icons">
+            <ul class="sci">
+                <li><a href="#"><img src="./assets/facebook-logo.png" alt=""></a></li>
+                <li><a href="#"><img src="./assets/instagram.png" alt=""></a></li>
+                <li><a href="#"><img src="./assets/instagram.png" alt=""></a></li>
+            </ul>
+            <ul class="controls">
+                <li onclick="prevSlide(); prevSlideText()"><a href="#">&leftarrow;</a></li>
+                <li onclick="nextSlide(); nextSlideText()"><a href="#">&rightarrow;</a></li>
+            </ul>
+        </div>
+    </div>
+    <script type='text/javascript'>
+        var slideshow = document.getElementById('slideshow');
+        var slides = slideshow.getElementsByTagName('img');
+        var index = 0;
+        function nextSlide() {
+            slides[index].classList.remove('active');
+            index = (index + 1) % slides.length;
+            slides[index].classList.add('active');
+        }
+
+        function prevSlide() {
+            slides[index].classList.remove('active');
+            index = (index - 1 + slides.length) % slides.length;
+            slides[index].classList.add('active');
+        }
+        var slideshowText = document.getElementById('slideshowText');
+        var slidesText = slideshowText.getElementsByTagName('div');
+        var i = 0;
+        function nextSlideText() {
+            slidesText[i].classList.remove('active');
+            i = (i + 1) % slidesText.length;
+            slidesText[i].classList.add('active');
+        }
+
+        function prevSlideText() {
+            slidesText[i].classList.remove('active');
+            i = (i - 1 + slidesText.length) % slidesText.length;
+            slidesText[i].classList.add('active');
+        }
+
+    </script>
+</body>
+
+</html>
